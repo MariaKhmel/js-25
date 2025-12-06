@@ -35,6 +35,22 @@
 // console.log(normalizedRes);
 // const slicedRes = res.slice(1).toLowerCase();
 // console.log(slicedRes);
-const blackListedWord = 'spam';
-const str = 'This is SPAM';
-console.log(str.toLowerCase().includes(blackListedWord));
+// const blackListedWord = 'spam';
+// const str = 'This is SPAM';
+// console.log(str.toLowerCase().includes(blackListedWord));
+// console.log(Number(null));
+// console.log(Number(undefined));
+// console.log(Number(false));
+// console.log(Number(""));
+
+// console.log('apple' && 'dog');
+// console.log(false && null);
+// console.log('apple' && false);
+
+// const x1 = 10;
+// const x2 = 30;
+// const number = 20;
+
+// console.log(`Number ${number} is included in the segment before x1`, number < x1)
+// const res = number > x1 && number < x2;
+// console.log(`Number ${number} is included in the segment`, res);
