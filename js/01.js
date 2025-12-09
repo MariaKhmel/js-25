@@ -301,3 +301,23 @@
 // console.log(`Оформляем заказ на сумму ${payment} со скидкой ${discount * 100} %`)
 
 
+// const refs = {
+//   btnAdd: document.querySelector('button[data-add]'),
+//   btnReset: document.querySelector('button[data-reset]'),
+//   valueInput: document.querySelector('input[data-value]'),
+//   outputEl: document.querySelector('.js-output span'),
+// }
+
+// let total = 0;
+
+// refs.btnAdd.addEventListener('click', function () {
+//   const value = Number(refs.valueInput.value);
+//   total += value;
+//   refs.outputEl.textContent = total;
+//   refs.valueInput.value = '';
+// })
+
+// refs.btnReset.addEventListener('click', function () {
+//   total = 0;
+//   refs.outputEl.textContent = total;
+// })
