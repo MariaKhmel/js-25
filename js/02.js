@@ -66,3 +66,123 @@ const cart = [54, 28, 105, 70, 92, 17, 120, 12, 25, 90];
 //   }
 // }
 // console.log(total);
+
+
+/*
+ * Напиши скрипт поиска логина
+ * - Если логина нет, вывести сообщение 'Пользователь [логин] не найден.'
+ * - Если нашли логин, вывести сообщение 'Пользователь [логин] найден.'
+ *
+ * - Сначала через for
+ * - Потом через for...of
+ * - Логика break
+ * - Метод includes() с тернарным оператором
+ */
+
+// const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+// const loginToFind = 'aj4xth3m4n';
+
+// let message = `Пользователь ${loginToFind} найден.`;
+
+let message = '';
+
+// for (let i = 0; i < logins.length; i += 1) {
+//   if (logins[i] === loginToFind) {
+//     message = `Пользователь ${loginToFind} найден.`;
+//     break;
+//   }
+
+//   message = `Пользователь ${loginToFind} не найден.`;
+// }
+
+
+// for (let i = 0; i < logins.length; i += 1) {
+//   if (logins[i] !== loginToFind) {
+//     message = `Пользователь ${loginToFind} найден.`;
+// break;
+//   }
+// }
+
+
+// for (const login of logins) {
+//   if (login !== loginToFind) {
+//     message = `Пользователь ${loginToFind} найден.`;
+// break;
+//   }
+// }
+
+// const message = logins.includes(loginToFind) ? `Пользователь ${loginToFind} найден.` : `Пользователь ${loginToFind} найден.`;
+// console.log(message);
+
+
+/*
+ * Напиши скрипт поиска самого маленького числа в массиве,
+ * при условии что числа уникальные (не повторяются).
+ */
+
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// let smallestNumber = numbers[0];
+
+// for (const number of numbers) {
+//   if (number < smallestNumber) {
+//     smallestNumber = number;
+//   }
+// }
+
+// for (let i = 0; i < numbers.length; i += 1) {
+//   if (numbers[i] < smallestNumber) {
+//     smallestNumber = numbers[i];
+//   }
+// }
+
+// const smallestNumber = Math.min(...numbers);
+// const sortedNumbers = [...numbers].sort((a, b) => a - b);
+
+// console.log(sortedNumbers[0]);
+// console.log(numbers)
+
+/*
+ * Напиши скрипт, который объединяет все элементы массива в одно строковое значение.
+ * Элементов может быть произвольное кол-во.
+ * Пусть элементы массива  в строке будут разделены запятой.
+ * - Сначала через for
+ * - Потом через join()
+ */
+
+// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+// let string = '';
+
+// for (const friend of friends) {
+//   string += friend + ',';
+// }
+
+// string = string.slice(0, string.length - 1);
+
+// string = friends.join(',');
+
+// console.log(string);
+
+/*
+ * Напиши скрипт который заменяет регистр каждого символа в строке на противоположный.
+ * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
+ */
+
+// const string = 'qWeRTzxCv';
+// const letters = string.split('');
+// console.log(letters)
+// let invertedString = '';
+
+// for (const letter of letters) {
+//   if (letter === letter.toLowerCase()) {
+//     invertedString += letter.toUpperCase();
+//   } else {
+//     invertedString += letter.toLowerCase();
+//   }
+// }
+
+// for (const letter of letters) {
+//   const isEqual = letter === letter.toLowerCase();
+//   invertedString += isEqual ? letter.toUpperCase() : letter.toLowerCase;
+// }
+
+// console.log(invertedString);
