@@ -40,11 +40,19 @@
 const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
 
 const findLogin = function (allLogins, loginToFind) {
-  for (const login of allLogins) {
-    if (login === loginToFind) {
-      return `Login is found ${loginToFind}`;
-    }
-  }
+  // for (const login of allLogins) {
+  //   if (login === loginToFind) {
+  //     return `Login is found ${loginToFind}`;
+  //   }
+  // }
+  // return `Login is not found - ${loginToFind}`;
+
+  // if (allLogins.includes(loginToFind)) {
+  //   return `Login is found ${loginToFind}`;
+  // }
+  // return `Login is not found - ${loginToFind}`;
+
+  return allLogins.includes(loginToFind) ? `Login is found ${loginToFind}` : `Login is not found - ${loginToFind}`;
 }
 
 console.log(findLogin(logins, 'k1widab3st'));
