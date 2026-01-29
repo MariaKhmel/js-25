@@ -56,3 +56,91 @@
 // }
 
 // console.log(findLogin(logins, 'k1widab3st'));
+
+/*
+ * Напиши функцию findSmallesNumber(numbers) для поиска самого маленького числа в массиве,
+ * при условии что числа уникальные (не повторяются).
+ */
+
+// const findSmallesNumber = function (numbers) {
+//   let smallestNumber = numbers[0];
+//   for (const number of numbers) {
+//     if (number < smallestNumber) {
+//       smallestNumber = number;
+//     }
+//   }
+//   return smallestNumber;
+
+// }
+
+// console.log(findSmallesNumber([11, 4, 6, 71, 3, 55, 5]));
+
+/*
+ * Напиши функцию changeCase(string) которая заменяет регистр
+ * каждого символа в строке на противоположный.
+ * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
+ */
+
+// const changeCase = function (string) {
+//   const letters = string.split("");
+//   let invertedString = "";
+
+//   for (const letter of letters) {
+//     const isLowerCase = letter.toLowerCase() === letter;
+
+//     isLowerCase ?
+//       invertedString += letter.toUpperCase() : invertedString += letter.toLowerCase();
+//   }
+//   return invertedString;
+// }
+
+// console.log(changeCase("JavaScript"));
+
+/*
+ * Напиши функцию slugify(string) которая получает строку и возвращает URL-slug
+ * Строка состоит только из букв и пробелов
+ */
+
+// const slugify = function (string) {
+//   return string.split(" ").join("-");
+
+// }
+
+// console.log(slugify("This is my string"));
+
+/*
+ * Напиши функцию filterNumbers(array [, number1, ...]) которая:
+ * - первым аргументом принимает массив чисел
+ * - после первого аргумента может быть произвольное количество других аргументов которые будут числами.
+ * - Функция должна вернуть новый массив, в котором будут только те аргументы, начиная со второго,
+ *   для которых есть аналог в оригинальном массиве.
+ */
+
+// const filterNumbers = function (numbersArray, ...args) {
+//   let newArr = [];
+
+//   for (const number of args) {
+//     if (numbersArray.includes(number)) {
+//       newArr.push(number);
+//     }
+//   }
+
+//   return newArr;
+// }
+
+// console.log(filterNumbers([1, 2, 3, 4, 5], 6, 3));
+
+
+const add = function (...args) {
+  let sum = 0;
+
+  for (const number of args) {
+    sum += number;
+  }
+
+  return sum;
+}
+
+console.log(add(1, 2, 3));
+console.log(add(1, 2, 3, 4));
+console.log(add(1, 2, 3, 5));
