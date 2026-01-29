@@ -143,4 +143,7 @@ const add = function (...args) {
 
 console.log(add(1, 2, 3));
 console.log(add(1, 2, 3, 4));
-console.log(add(1, 2, 3, 5));
+
+const res = new Set([1, 2, 34, 2]);
+console.log(res);
+console.log(res);
