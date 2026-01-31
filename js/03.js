@@ -187,3 +187,87 @@
 // console.log(playList.getTrackCount());
 // playList.updateRating(8);
 // console.log(playList.rating);
+
+// const feedback = {
+//   good: 5,
+//   neutral: 10,
+//   bad: 3,
+// };
+
+// function totalFeedback(feedback) {
+//   const keys = Object.keys(feedback);
+//   let sum = 0;
+//   for (const key of keys) {
+//     sum += feedback[key];
+//   }
+//   return sum;
+// }
+
+// console.log(totalFeedback(feedback));
+
+
+const friends = [
+  { name: 'Mango', online: false },
+  { name: 'Kiwi', online: true },
+  { name: 'Poly', online: false },
+  { name: 'Ajax', online: false },
+];
+
+// const findFriendsByName = function (allFriends, friendName) {
+//   for (const friend of allFriends) {
+//     if (friend.name === friendName) {
+//       return "FOUND";
+//     }
+//   }
+//   return "NOT FOUND";
+// }
+
+// const findFriendsByName = (allFriends, friendName) =>
+//   allFriends.some(friend => friend.name === friendName);
+
+// console.log(findFriendsByName(friends, "Poly"));
+// console.log(findFriendsByName(friends, "Poly1"));
+
+// const getAllNames = function (allFriends) {
+//   let allFriendNames = [];
+//   for (const friends of allFriends) {
+//     allFriendNames.push(friends.name);
+//   }
+//   return allFriendNames;
+// }
+
+// const getAllNames = (allFriends) => allFriends.map(friend => friend.name);
+
+// console.log(getAllNames(friends));
+
+// const getOnlineFriends = function (allFriends) {
+//   const onlineFriends = [];
+//   for (const friend of allFriends) {
+//     if (friend.online) {
+//       onlineFriends.push(friend.name);
+//     }
+//   }
+//   return onlineFriends;
+
+// }
+
+
+// const getOnlineFriends = allFriends =>
+//   allFriends.filter(friend => friend.online)
+//     .map(friend => friend.name);
+// console.log(getOnlineFriends(friends));
+
+// const getOfflineFriends = allFriends =>
+//   allFriends.filter(friend => !friend.online)
+//     .map(friend => friend.name);
+// console.log(getOfflineFriends(friends));
+
+// const getOnlineFriend = (allFriends = []) =>
+//   allFriends.reduce((acc, friend) => {
+//     if (friend && friend.online) {
+//       acc.push(friend.name);
+//     }
+//     return acc;
+//   }, []);
+
+// console.log(getOnlineFriend(friends));
