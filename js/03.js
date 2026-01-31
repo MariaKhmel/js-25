@@ -131,19 +131,59 @@
 // console.log(filterNumbers([1, 2, 3, 4, 5], 6, 3));
 
 
-const add = function (...args) {
-  let sum = 0;
+// const add = function (...args) {
+//   let sum = 0;
 
-  for (const number of args) {
-    sum += number;
-  }
+//   for (const number of args) {
+//     sum += number;
+//   }
 
-  return sum;
-}
+//   return sum;
+// }
 
-console.log(add(1, 2, 3));
-console.log(add(1, 2, 3, 4));
+// console.log(add(1, 2, 3));
+// console.log(add(1, 2, 3, 4));
 
-const res = new Set([1, 2, 34, 2]);
-console.log(res);
-console.log(res);
+// const res = new Set([1, 2, 34, 2]);
+// console.log(res);
+// console.log(res);
+
+/*
+ * Объекты (делаем плейлист музыки: имя, рейтинг, треки, кол-во треков)
+ * - Литерал объекта
+ * - Свойства, ключи (имя) и значения
+ * - Как отличить объект от области видимости
+ */
+
+/* - changeName
+ * - addTrack
+ * - updateRating
+ * - getTrackCount
+ */
+
+// const playList = {
+//   name: "my playlist",
+//   rating: 6,
+//   tracks: ["track-1", "track-2", "track-3", "track-4"],
+//   trackCount: 4,
+//   changeName(newName) {
+//     this.name = newName;
+//   },
+//   addTrack(newTrack) {
+//     this.tracks.push(newTrack);
+//   },
+//   updateRating(newRating) {
+//     this.rating = newRating;
+//   },
+//   getTrackCount() {
+//     return this.tracks.length;
+//   }
+// }
+
+// playList.changeName("newName");
+// console.log(playList.name);
+// playList.addTrack("track-5");
+// console.log(playList.tracks);
+// console.log(playList.getTrackCount());
+// playList.updateRating(8);
+// console.log(playList.rating);
