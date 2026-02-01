@@ -271,3 +271,52 @@ const friends = [
 //   }, []);
 
 // console.log(getOnlineFriend(friends));
+
+// const getOnlineFriends = function (allFriends = [], returnObjects = false) {
+//   if (!Array.isArray(allFriends)) return [];
+//   const onlineFriendsObj = allFriends.filter(friend => friend.online);
+//   const onlineFriendNames = onlineFriendsObj.map(f => f.name);
+//   return returnObjects ? onlineFriendsObj : onlineFriendNames;
+// }
+
+// console.log(getOnlineFriends(friends));
+
+// const getFriendsByStatus = function (allFriends = []) {
+//   if (Array.isArray(allFriends)) return {online:[], offline:[]};
+//   const friendsByStatus = {
+//     online: [],
+//     offline: [],
+//   }
+
+//   for (const friend of allFriends) {
+//     if (friend.online) {
+//       friendsByStatus.online.push(friend.name);
+//     } else {
+//       friendsByStatus.offline.push(friend.name);
+//     }
+//   }
+
+//   return friendsByStatus;
+
+// }
+
+// const getFriendsByStatus = function (allFriends = [], { returnObjects = false } = {}) {
+//   if (!Array.isArray(allFriends)) return { online: [], offline: [] };
+
+//   return allFriends.reduce((acc, friend) => {
+//     if (!friend) return acc;
+//     const key = friend.online ? "online" : "offline";
+//     acc[key].push(returnObjects ? friend : friend.name);
+//     return acc;
+//   }, { online: [], offline: [] });
+
+// }
+
+// console.log(getFriendsByStatus(friends, { returnObjects: true }));
+
+const getFriendsByStatus = allFriends => ({
+  online: allFriends.filter(f => f.online).map(f => f.name),
+  offline: allFriends.filter(f => !f.online).map(f => f.name),
+})
+
+console.log(getFriendsByStatus(friends));
