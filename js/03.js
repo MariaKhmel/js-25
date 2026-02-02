@@ -339,7 +339,7 @@ const cart = {
     return this.items;
   },
   add(product) {
-    this.items.push(product);
+    this.items.push({ ...product, quantity: product.quantity = product.quantity ?? 0 });
   },
   // remove(productName) {
   //   for (const item of this.items) {
@@ -375,21 +375,42 @@ const cart = {
     return `Total is ${sum}`;
   },
 
+  // increaseQuantity(productName) {
+  //   for (const item of this.items) {
+  //     if (item.name === productName) {
+  //       item.quantity = (item.quantity ?? 0) + 1;
+  //     }
+  //   }
+  // },
+
   increaseQuantity(productName) {
-    for (const item of this.items) {
-      if (item.name === productName) {
-        item['quantity'] += 1;
-      }
+    const item = this.items.find(i => i.name === productName);
+    if (!item) return;
+    item.quantity = (item.quantity ?? 0) + 1;
+  },
+  // decreaseQuantity(productName) {
+  //   for (const item of this.items) {
+  //     if (item.name === productName) {
+  //       item.quantity > 1 ? item.quantity -= 1 : item.quantity = 0;
+  //     }
+  //   }
+  // },
+  decreaseQuantity(productName) {
+    const item = this.items.find(i => i.name === productName);
+    if (!item) return;
+    if (item.quantity > 1) {
+      item.quantity -= 1;
+    } else {
+      this.remove(item.name);
     }
   }
-
 }
 
-cart.add({ name: 'ff', price: 50 });
+cart.add({ name: 'ff', price: 50, quantity: 3 });
 cart.add({ name: 'dd', price: 50 });
 cart.add({ name: 'cc', price: 50 });
-cart.remove("ff");
 console.log(cart.items);
-console.log(cart.countTotalPrice());
-cart.increaseQuantity('dd');
-console.log(cart.items)
+cart.increaseQuantity("ff");
+cart.decreaseQuantity("ff");
+cart.decreaseQuantity("dd");
+console.log(cart.items);
