@@ -314,9 +314,82 @@ const friends = [
 
 // console.log(getFriendsByStatus(friends, { returnObjects: true }));
 
-const getFriendsByStatus = allFriends => ({
-  online: allFriends.filter(f => f.online).map(f => f.name),
-  offline: allFriends.filter(f => !f.online).map(f => f.name),
-})
+// const getFriendsByStatus = allFriends => ({
+//   online: allFriends.filter(f => f.online).map(f => f.name),
+//   offline: allFriends.filter(f => !f.online).map(f => f.name),
+// })
 
-console.log(getFriendsByStatus(friends));
+// console.log(getFriendsByStatus(friends));
+
+/*
+ * Работем с коллекцией товаров в корзине:
+ * - getItems()
+ * - add(product)
+ * - remove(productName)
+ * - clear()
+ * - countTotalPrice()
+ * - increaseQuantity(productName)
+ * - decreaseQuantity(productName)
+ *
+ */
+
+const cart = {
+  items: [],
+  getItems() {
+    return this.items;
+  },
+  add(product) {
+    this.items.push(product);
+  },
+  // remove(productName) {
+  //   for (const item of this.items) {
+  //     const productToDeleteIdx = item.name.indexOf(productName);
+  //     if (productToDeleteIdx !== -1) {
+  //       this.items.splice(productToDeleteIdx, 1);
+  //     }
+  //   }
+  // },
+  // remove(productName) {
+  //   const idx = this.items.
+  //     findIndex(item => item.name === productName);
+  //   this.items.splice(idx, 1);
+  // },
+  remove(productName) {
+    this.items = this.items.filter(item => item.name !== productName)
+  },
+  clear() {
+    this.items = [];
+  },
+  // countTotalPrice() {
+  //   let sum = 0;
+  //   for (const item of this.items) {
+  //     sum += item.price;
+  //   }
+  //   return `Total is ${sum}`;
+  // },
+  countTotalPrice() {
+    const sum = this.items.reduce((acc, item) => {
+      acc += item.price;
+      return acc;
+    }, 0);
+    return `Total is ${sum}`;
+  },
+
+  increaseQuantity(productName) {
+    for (const item of this.items) {
+      if (item.name === productName) {
+        item['quantity'] += 1;
+      }
+    }
+  }
+
+}
+
+cart.add({ name: 'ff', price: 50 });
+cart.add({ name: 'dd', price: 50 });
+cart.add({ name: 'cc', price: 50 });
+cart.remove("ff");
+console.log(cart.items);
+console.log(cart.countTotalPrice());
+cart.increaseQuantity('dd');
+console.log(cart.items)
