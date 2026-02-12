@@ -333,84 +333,84 @@ const friends = [
  *
  */
 
-const cart = {
-  items: [],
-  getItems() {
-    return this.items;
-  },
-  add(product) {
-    this.items.push({ ...product, quantity: product.quantity = product.quantity ?? 0 });
-  },
-  // remove(productName) {
-  //   for (const item of this.items) {
-  //     const productToDeleteIdx = item.name.indexOf(productName);
-  //     if (productToDeleteIdx !== -1) {
-  //       this.items.splice(productToDeleteIdx, 1);
-  //     }
-  //   }
-  // },
-  // remove(productName) {
-  //   const idx = this.items.
-  //     findIndex(item => item.name === productName);
-  //   this.items.splice(idx, 1);
-  // },
-  remove(productName) {
-    this.items = this.items.filter(item => item.name !== productName)
-  },
-  clear() {
-    this.items = [];
-  },
-  // countTotalPrice() {
-  //   let sum = 0;
-  //   for (const item of this.items) {
-  //     sum += item.price;
-  //   }
-  //   return `Total is ${sum}`;
-  // },
-  countTotalPrice() {
-    const sum = this.items.reduce((acc, item) => {
-      acc += item.price;
-      return acc;
-    }, 0);
-    return `Total is ${sum}`;
-  },
+// const cart = {
+//   items: [],
+//   getItems() {
+//     return this.items;
+//   },
+//   add(product) {
+//     this.items.push({ ...product, quantity: product.quantity = product.quantity ?? 0 });
+//   },
+// remove(productName) {
+//   for (const item of this.items) {
+//     const productToDeleteIdx = item.name.indexOf(productName);
+//     if (productToDeleteIdx !== -1) {
+//       this.items.splice(productToDeleteIdx, 1);
+//     }
+//   }
+// },
+// remove(productName) {
+//   const idx = this.items.
+//     findIndex(item => item.name === productName);
+//   this.items.splice(idx, 1);
+// },
+// remove(productName) {
+//   this.items = this.items.filter(item => item.name !== productName)
+// },
+// clear() {
+//   this.items = [];
+// },
+// countTotalPrice() {
+//   let sum = 0;
+//   for (const item of this.items) {
+//     sum += item.price;
+//   }
+//   return `Total is ${sum}`;
+// },
+// countTotalPrice() {
+//   const sum = this.items.reduce((acc, item) => {
+//     acc += item.price;
+//     return acc;
+//   }, 0);
+//   return `Total is ${sum}`;
+// },
 
-  // increaseQuantity(productName) {
-  //   for (const item of this.items) {
-  //     if (item.name === productName) {
-  //       item.quantity = (item.quantity ?? 0) + 1;
-  //     }
-  //   }
-  // },
+// increaseQuantity(productName) {
+//   for (const item of this.items) {
+//     if (item.name === productName) {
+//       item.quantity = (item.quantity ?? 0) + 1;
+//     }
+//   }
+// },
 
-  increaseQuantity(productName) {
-    const item = this.items.find(i => i.name === productName);
-    if (!item) return;
-    item.quantity = (item.quantity ?? 0) + 1;
-  },
-  // decreaseQuantity(productName) {
-  //   for (const item of this.items) {
-  //     if (item.name === productName) {
-  //       item.quantity > 1 ? item.quantity -= 1 : item.quantity = 0;
-  //     }
-  //   }
-  // },
-  decreaseQuantity(productName) {
-    const item = this.items.find(i => i.name === productName);
-    if (!item) return;
-    if (item.quantity > 1) {
-      item.quantity -= 1;
-    } else {
-      this.remove(item.name);
-    }
-  }
-}
+// increaseQuantity(productName) {
+//   const item = this.items.find(i => i.name === productName);
+//   if (!item) return;
+//   item.quantity = (item.quantity ?? 0) + 1;
+// },
+// decreaseQuantity(productName) {
+//   for (const item of this.items) {
+//     if (item.name === productName) {
+//       item.quantity > 1 ? item.quantity -= 1 : item.quantity = 0;
+//     }
+//   }
+// },
+//   decreaseQuantity(productName) {
+//     const item = this.items.find(i => i.name === productName);
+//     if (!item) return;
+//     if (item.quantity > 1) {
+//       item.quantity -= 1;
+//     } else {
+//       this.remove(item.name);
+//     }
+//   }
+// }
 
-cart.add({ name: 'ff', price: 50, quantity: 3 });
-cart.add({ name: 'dd', price: 50 });
-cart.add({ name: 'cc', price: 50 });
-console.log(cart.items);
-cart.increaseQuantity("ff");
-cart.decreaseQuantity("ff");
-cart.decreaseQuantity("dd");
-console.log(cart.items);
+// cart.add({ name: 'ff', price: 50, quantity: 3 });
+// cart.add({ name: 'dd', price: 50 });
+// cart.add({ name: 'cc', price: 50 });
+// console.log(cart.items);
+// cart.increaseQuantity("ff");
+// cart.decreaseQuantity("ff");
+// cart.decreaseQuantity("dd");
+// console.log(cart.items);
