@@ -452,18 +452,18 @@ const cart = {
     // }
 
 
-    const { items } = this;
-    for (let i = 0; i < items.length; i += 1) {
-      if (items[i].name === productName) {
-        items.splice(i, 1);
-      }
-    }
+    //   const { items } = this;
+    //   for (let i = 0; i < items.length; i += 1) {
+    //     if (items[i].name === productName) {
+    //       items.splice(i, 1);
+    //     }
+    //   }
 
-  },
-  clear() {
-    this.items = [];
-  },
-  countTotalPrice() {
+    // },
+    // clear() {
+    //   this.items = [];
+    // },
+    // countTotalPrice() {
     // const { items } = this;
     // let total = 0;
 
@@ -472,51 +472,51 @@ const cart = {
     // }
 
     // return total;
-  },
-  increaseQuantity(productName) {
-    for (const item of this.items) {
-      if (item.name === productName) {
-        item.quantity += 1;
-      }
-    }
-  },
-  decreaseQuantity(productName) {
-    for (const item of this.items) {
-      if (item.name === productName) {
-        item.quantity -= 1;
-      }
-    }
-  },
-};
+    // },
+    //   increaseQuantity(productName) {
+    //     for (const item of this.items) {
+    //       if (item.name === productName) {
+    //         item.quantity += 1;
+    //       }
+    //     }
+    //   },
+    //   decreaseQuantity(productName) {
+    //     for (const item of this.items) {
+    //       if (item.name === productName) {
+    //         item.quantity -= 1;
+    //       }
+    //     }
+    //   },
+    // };
 
-console.log(cart.getItems());
+    // console.log(cart.getItems());
 
-cart.add({ name: '🍎', price: 50 });
-cart.add({ name: '🍇', price: 60 });
-cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍓', price: 110 });
-cart.add({ name: '🍓', price: 110 });
-cart.add({ name: '🍓', price: 110 });
+    // cart.add({ name: '🍎', price: 50 });
+    // cart.add({ name: '🍇', price: 60 });
+    // cart.add({ name: '🍋', price: 60 });
+    // cart.add({ name: '🍋', price: 60 });
+    // cart.add({ name: '🍓', price: 110 });
+    // cart.add({ name: '🍓', price: 110 });
+    // cart.add({ name: '🍓', price: 110 });
 
-console.table(cart.getItems());
+    // console.table(cart.getItems());
 
-console.log('Total: ', cart.countTotalPrice());
+    // console.log('Total: ', cart.countTotalPrice());
 
-cart.remove('🍇');
-console.table(cart.getItems());
+    // cart.remove('🍇');
+    // console.table(cart.getItems());
 
-// cart.clear();
-// console.log(cart.getItems());
+    // cart.clear();
+    // console.log(cart.getItems());
 
-console.log('Total: ', cart.countTotalPrice());
+    console.log('Total: ', cart.countTotalPrice());
 
-// cart.increaseQuantity('🍎');
-// console.table(cart.getItems());
+    // cart.increaseQuantity('🍎');
+    // console.table(cart.getItems());
 
-// cart.decreaseQuantity('🍋');
-// cart.decreaseQuantity('🍋');
-// console.table(cart.getItems());
+    // cart.decreaseQuantity('🍋');
+    // cart.decreaseQuantity('🍋');
+    // console.table(cart.getItems());
 
-cart.increaseQuantity('🍓');
-console.table(cart.items)
+    cart.increaseQuantity('🍓');
+    console.table(cart.items)
