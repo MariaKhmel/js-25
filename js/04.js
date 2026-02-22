@@ -40,4 +40,28 @@
 
 // filter(arr, callback);
 
-// console.log(filteredArr)
+// console.log(filteredArr);
+
+const fruits = [
+  { name: 'apples', quantity: 200, isFresh: true },
+  { name: 'grapes', quantity: 150, isFresh: false },
+  { name: 'bananas', quantity: 100, isFresh: true },
+];
+
+
+const getFruitWithQuantity = function (fruit) {
+  return fruit.quantity >= 120;
+}
+
+const filter = function (arr, filterFunc) {
+  const filteredArr = [];
+  for (const el of arr) {
+    const passed = filterFunc(el);
+    if (passed) {
+      filteredArr.push(el);
+    }
+  }
+  return filteredArr;
+}
+console.log(filter(fruits, getFruitWithQuantity));
+
