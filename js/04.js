@@ -65,15 +65,52 @@
 // }
 // console.log(filter(fruits, getFruitWithQuantity));
 
-const fnA = function (parameter) {
-  const innerVariable = "innerVariable inside fnA"
-  const fnB = function () {
-    console.log(parameter);
-    console.log(innerVariable);
-    console.log("console inside FnB")
-  }
+// const fnA = function (parameter) {
+//   const innerVariable = "innerVariable inside fnA"
+//   const fnB = function () {
+//     console.log(parameter);
+//     console.log(innerVariable);
+//     console.log("console inside FnB")
+//   }
 
-  return fnB;
-}
-const fnC = fnA(555);
-fnC()
+//   return fnB;
+// }
+// const fnC = fnA(555);
+// fnC()
+
+// const makeDish = function (cheff) {
+//   return function (dish) {
+//     console.log(cheff + " " + "cooks" + " " + dish);
+//   }
+// }
+
+// const mango = makeDish("Mango");
+// const polly = makeDish("Polly");
+
+// mango("dish1");
+
+// const makeChef = function (chef) {
+//   const makeDish = function (dish) {
+//     // console.log(chef + " " + "cooks" + " " + dish);
+//     console.log(`${chef} cooks ${dish}`);
+//   }
+//   return makeDish;
+// }
+
+// const mango = makeChef("Mango");
+// mango("dish1");
+
+// console.dir(mango);
+
+// const floatingPoint = 3.65678;
+// const someInt = Math.round(floatingPoint);
+// const withDecimals = Number(floatingPoint.toFixed(2));
+
+// function rounder(digits) {
+//   return function (num) {
+//     console.log(Number(num.toFixed(digits)));
+//   }
+// }
+
+// const rounder2 = rounder(2);
+// rounder2(5.6666);//5.67
