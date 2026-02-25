@@ -114,3 +114,21 @@
 
 // const rounder2 = rounder(2);
 // rounder2(5.6666);//5.67
+
+// const libFactory = function () {
+//   const value = 999;
+//   function add(num) {
+//     return value += num;
+//   }
+//   return {
+//     add,
+//     getValue: function () {
+//       return value;
+//     }
+//   }
+// }
+
+// const myLib = libFactory();
+// console.log(myLib.getValue(5));
+// console.dir(myLib.getValue)
+
