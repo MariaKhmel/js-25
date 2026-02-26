@@ -132,3 +132,26 @@
 // console.log(myLib.getValue(5));
 // console.dir(myLib.getValue)
 
+// const salaryFactory = function (employeeName, baseSalary = 0) {
+//   let salary = baseSalary;
+
+//   return {
+//     current: function () {
+//       return `Current ${employeeName}'s salary is ${salary}`;
+//     },
+//     add: function (amount) {
+//       salary += amount;
+//       return salary;
+//     },
+//     sub: function (amount) {
+//       salary -= amount;
+//       return salary;
+//     }
+//   }
+// }
+
+// const managerSalary = salaryFactory("Tom", 2000);
+// console.log(managerSalary.current())
+// console.log(managerSalary.add(100));
+// console.log(managerSalary.sub(100));
+// console.dir(managerSalary.current);
