@@ -165,7 +165,15 @@
 //       console.log(this, "in inner")
 //     }
 //     inner()
+
 //   },
 // };
 
 // user.showTag();
+
+// const User = function (name) {
+//   this.name = name;
+// }
+
+// const test = new User("g");
+// console.log(test.name)
