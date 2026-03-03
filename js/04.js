@@ -155,3 +155,17 @@
 // console.log(managerSalary.add(100));
 // console.log(managerSalary.sub(100));
 // console.dir(managerSalary.current);
+
+// const user = {
+//   tag: 'Mango',
+//   showTag() {
+//     console.log('showTag -> this', this);
+//     console.log('showTag -> this.tag', this.tag);
+//     const inner = function () {
+//       console.log(this, "in inner")
+//     }
+//     inner()
+//   },
+// };
+
+// user.showTag();
