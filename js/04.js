@@ -208,13 +208,13 @@
 
 // console.log((doubledArr(numbers)));
 
-const players = [
-  { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
-  { id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: true },
-  { id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: true },
-  { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
-  { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: true },
-];
+// const players = [
+//   { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
+//   { id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: true },
+//   { id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: true },
+//   { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
+//   { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: true },
+// ];
 
 // const playersNames = players.map(player => player.name);
 // console.log(playersNames);
@@ -247,4 +247,79 @@ const players = [
 //   return player;
 // })
 
-// console.log(updatePlayerTime)
+// console.log(updatePlayerTime);
+
+// const numbers = [5, 10, 15, 20, 25];
+
+// const filteredNumbers = numbers.filter(num => num > 15);
+// console.log(filteredNumbers);
+
+// const players = [
+//   { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
+//   { id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: true },
+//   { id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: true },
+//   { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
+//   { id: 'player-5', name: 'Chelsy', timePlayed: 280, points: 48, online: true },
+// ];
+
+/*
+ * Получаем массив всех онлайн игроков
+ */
+
+// const onlinePlayers = players.filter(function (player) {
+//   return player.online;
+// })
+/*
+ * Получаем массив всех оффлайн игроков
+ */
+
+// const offlinePlayers = players.filter(player => !player.online)
+// console.log(offlinePlayers);
+
+/*
+ * Получаем список хардкорных игроков с временем больше 250
+ */
+
+// function hardcodePlayers(players) {
+//   return players.filter(({ timePlayed }) => timePlayed > 250);
+// }
+
+// console.log(hardcodePlayers(players));
+
+
+// const numbers = [5, 10, 15, 20, 25];
+
+// const number = numbers.find(number => number > 35);
+// console.log(number);
+
+const players = [
+  { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
+  { id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: true },
+  { id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: true },
+  { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
+  { id: 'player-5', name: 'Chelsy', timePlayed: 280, points: 48, online: true },
+];
+
+// const playerIdToFund = 'player-3';
+
+// const player = players.find(el => el.id === playerIdToFund);
+// console.log(player)
+
+/*
+ * Array.prototype.every()
+ * - Поэлементо перебирает оригинальный массив
+ * - Возвращает true если все элементы массива удовлетворяют условию
+ */
+
+// const isAllOnline = players.every(player => {
+//   return player.online;
+// })
+
+// console.log(isAllOnline)
+
+// function isAnyOnline(players) {
+//   return players.some(function (player) {
+//     return player.online;
+//   })
+// }
+// console.log(isAnyOnline(players));
