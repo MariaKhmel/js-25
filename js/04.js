@@ -292,13 +292,13 @@
 // const number = numbers.find(number => number > 35);
 // console.log(number);
 
-const players = [
-  { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
-  { id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: true },
-  { id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: true },
-  { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
-  { id: 'player-5', name: 'Chelsy', timePlayed: 280, points: 48, online: true },
-];
+// const players = [
+//   { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
+//   { id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: true },
+//   { id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: true },
+//   { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
+//   { id: 'player-5', name: 'Chelsy', timePlayed: 280, points: 48, online: true },
+// ];
 
 // const playerIdToFund = 'player-3';
 
@@ -330,22 +330,85 @@ const players = [
 // }, 0);
 // console.log(sum)
 
-const salary = {
-  x: 22,
-  y: 44,
-  z: 87
-}
+// const salary = {
+//   x: 22,
+//   y: 44,
+//   z: 87
+// }
 
 
-function calculateTotalSalary(obj) {
-  // const values = Object.values(obj);
-  let values = [];
-  for (const el in obj) {
-    values.push(obj[el]);
+// function calculateTotalSalary(obj) {
+//   // const values = Object.values(obj);
+//   let values = [];
+//   for (const el in obj) {
+//     values.push(obj[el]);
+//   }
+//   return values.reduce((acc, el) => {
+//     return acc += el;
+//   }, 0)
+// }
+
+// console.log(calculateTotalSalary(salary));
+
+// const players = [
+//   { id: 'player-1', name: 'x', timePlayed: 20 },
+//   { id: 'player-2', name: 'y', timePlayed: 30 },
+//   { id: 'player-3', name: 'z', timePlayed: 40 },
+// ]
+// let timePlayedArr = [];
+// for (const el of players) {
+//   timePlayedArr.push(el.timePlayed);
+// }
+
+
+// function totalTimePlayed(timePlayedArr) {
+//   return timePlayedArr.reduce((acc, el) => {
+//     return acc += el;
+//   }, 0)
+
+// }
+// console.log(totalTimePlayed(timePlayedArr));
+
+// const cart = [
+//   { label: 'apple', price: 22, quantity: 2 },
+//   { label: 'banana', price: 11, quantity: 3 },
+//   { label: 'lemon', price: 60, quantity: 4 },
+// ];
+
+// const calculateTotalPrice = cart.reduce(function (acc, el) {
+//   return acc + (el.price * el.quantity);
+// }, 0);
+
+// console.log(calculateTotalPrice);
+
+const tweets = [
+  { id: '000', likes: 4, tags: ['js', 'html'] },
+  { id: '001', likes: 1, tags: ['js', 'css'] },
+  { id: '002', likes: 5, tags: ['nodejs', 'html'] },
+  { id: '003', likes: 6, tags: ['js', 'react'] },
+];
+
+const allTags = tweets.reduce((acc, el) => {
+  acc.push(...el.tags);
+  return acc;
+
+}, []);
+console.log(allTags)
+
+// console.log(allTags.filter((el, index, arr) => arr.indexOf(el) === index))
+
+const tagStats = allTags.reduce((acc, el) => {
+  if (acc[el]) {
+    acc[el] += 1;
+    return acc;
   }
-  return values.reduce((acc, el) => {
-    return acc += el;
-  }, 0)
-}
 
-console.log(calculateTotalSalary(salary));
+  acc[el] = 1;
+  return acc;
+
+  // return !acc[el] ? ({
+  //   ...acc,
+  //   [el]: 1
+  // }) : ({ ...acc, [el]: acc[el] + 1 });
+}, {});
+console.log(tagStats);
