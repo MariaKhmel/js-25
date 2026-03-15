@@ -323,3 +323,29 @@ const players = [
 //   })
 // }
 // console.log(isAnyOnline(players));
+// const numbers = [5, 10, 15, 20, 25];
+
+// const sum = numbers.reduce(function (acc, el) {
+//   return acc += el;
+// }, 0);
+// console.log(sum)
+
+const salary = {
+  x: 22,
+  y: 44,
+  z: 87
+}
+
+
+function calculateTotalSalary(obj) {
+  // const values = Object.values(obj);
+  let values = [];
+  for (const el in obj) {
+    values.push(obj[el]);
+  }
+  return values.reduce((acc, el) => {
+    return acc += el;
+  }, 0)
+}
+
+console.log(calculateTotalSalary(salary));
