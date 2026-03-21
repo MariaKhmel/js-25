@@ -381,34 +381,34 @@
 
 // console.log(calculateTotalPrice);
 
-const tweets = [
-  { id: '000', likes: 4, tags: ['js', 'html'] },
-  { id: '001', likes: 1, tags: ['js', 'css'] },
-  { id: '002', likes: 5, tags: ['nodejs', 'html'] },
-  { id: '003', likes: 6, tags: ['js', 'react'] },
-];
+// const tweets = [
+//   { id: '000', likes: 4, tags: ['js', 'html'] },
+//   { id: '001', likes: 1, tags: ['js', 'css'] },
+//   { id: '002', likes: 5, tags: ['nodejs', 'html'] },
+//   { id: '003', likes: 6, tags: ['js', 'react'] },
+// ];
 
-const allTags = tweets.reduce((acc, el) => {
-  acc.push(...el.tags);
-  return acc;
+// const allTags = tweets.reduce((acc, el) => {
+//   acc.push(...el.tags);
+//   return acc;
 
-}, []);
-console.log(allTags)
+// }, []);
+// console.log(allTags)
 
 // console.log(allTags.filter((el, index, arr) => arr.indexOf(el) === index))
 
-const tagStats = allTags.reduce((acc, el) => {
-  if (acc[el]) {
-    acc[el] += 1;
-    return acc;
-  }
+// const tagStats = allTags.reduce((acc, el) => {
+//   if (acc[el]) {
+//     acc[el] += 1;
+//     return acc;
+//   }
 
-  acc[el] = 1;
-  return acc;
+//   acc[el] = 1;
+//   return acc;
 
   // return !acc[el] ? ({
   //   ...acc,
   //   [el]: 1
   // }) : ({ ...acc, [el]: acc[el] + 1 });
-}, {});
-console.log(tagStats);
+// }, {});
+// console.log(tagStats);
