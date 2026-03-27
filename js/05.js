@@ -85,3 +85,23 @@
 // user.showTag = showTag;
 
 // user.showTag()
+
+// const makeChangeColor = function () {
+
+//   const changeColor = function (color) {
+//     console.log("this in changeColor func ->", this);
+//     // this.color = color;
+//   }
+
+//   const sweater = {
+//     color: "teal",
+//   }
+
+//   sweater.updateColor = changeColor;
+
+//   return sweater.updateColor;
+// }
+
+// const swapColor = makeChangeColor();
+// swapColor("blue");
+// console.log(swapColor)
