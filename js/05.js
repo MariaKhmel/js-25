@@ -70,3 +70,18 @@
 
 // const fnB = fnA;
 // console.log('fnB === fnA: ', fnB === fnA);
+
+
+
+// const showTag = function () {
+//   console.log("showtag this ->", this);
+//   console.log("showtag this.tag ->", this.tag);
+// }
+
+// const user = {
+//   tag: "Mango",
+// }
+
+// user.showTag = showTag;
+
+// user.showTag()
