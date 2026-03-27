@@ -56,3 +56,17 @@
 
 // const array = [1, 2, [4, [5]], [6, [7, 8, [9]]]];
 // console.log(array.flat(2));
+
+// console.log('[] === []: ', [] === []);
+// console.log('{} === {}: ', {} === {});
+// console.log(
+//     'function() {} === function() {}: ',
+//     function () {} === function () {},
+// );
+
+// const fnA = function () {
+//     console.log('hello');
+// };
+
+// const fnB = fnA;
+// console.log('fnB === fnA: ', fnB === fnA);
