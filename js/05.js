@@ -105,3 +105,22 @@
 // const swapColor = makeChangeColor();
 // swapColor("blue");
 // console.log(swapColor)
+
+// const counter = {
+//   value: 0,
+//   increment: function (value) {
+//     console.log("this in increment ->", this);
+//     this.value += value;
+//   },
+//   decrement: function (value) {
+//     console.log("this in decrement ->", this);
+//     this.value -= value;
+//   }
+// }
+
+// const updateCounter = function (value, operation) {
+//   operation(value);
+// }
+
+// updateCounter(10, counter.increment);
+// updateCounter(16, counter.decrement);
