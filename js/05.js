@@ -108,22 +108,42 @@
 
 const counter = {
   value: 0,
-  increment: function (value) {
+  increment: function () {
     console.log("this in increment ->", this);
-    this.value += value;
+    this.value += 1;
   },
-  decrement: function (value) {
+  decrement: function () {
     console.log("this in decrement ->", this);
-    this.value -= value;
+    this.value -= 1;
   }
 }
 
-const updateCounter = function (value, operation) {
-  operation(value);
-}
+// const updateCounter = function (value, operation) {
+//   operation(value);
+// }
 
-updateCounter(10, counter.increment.bind(counter));
-updateCounter(16, counter.decrement.bind(counter));
+// updateCounter(10, counter.increment.bind(counter));
+// updateCounter(16, counter.decrement.bind(counter));
+
+const incrementBtn = document.querySelector(".js-increment");
+const decrementBtn = document.querySelector(".js-decrement");
+const valueEl = document.querySelector(".js-value");
+
+
+incrementBtn.addEventListener("click", function () {
+  console.log("clicked increment");
+  counter.increment();
+  console.log(counter);
+  valueEl.textContent = counter.value;
+})
+
+
+decrementBtn.addEventListener("click", function () {
+  console.log("clicked decrement");
+  counter.decrement();
+  console.log(counter);
+  valueEl.textContent = counter.value;
+})
 
 
 

@@ -4,17 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      button {
+        margin: 10px;
+        font-size: 16px;
+        font-family: inherit;
+        cursor: pointer;
+      }
+      .counter {
+        display: flex;
+        align-items: center;
+      }
+
+      .counter > p {
+        margin: 0;
+        font-size: 48px;
+        font-family: monospace;
+      }
+    </style>
   </head>
   <body>
-    <label>
+    <!-- <label>
       Number:
       <input type="number" data-value />
     </label>
 
     <button type="button" data-add>Add</button>
-    <button type="button" data-reset>Reset</button>
+    <button type="button" data-reset>Reset</button> -->
+    <!-- 
+    <p class="js-output">Sum: <span>0</span></p> -->
 
-    <p class="js-output">Sum: <span>0</span></p>
+    <div class="counter">
+      <button class="js-increment">Increment</button>
+      <p class="js-value">0</p>
+      <button class="js-decrement">Decrement</button>
+    </div>
     <!-- <script type="module" src="./js/01.js"></script> -->
     <!-- <script type="module" src="./js/02.js"></script> -->
     <!-- <script type="module" src="./js/03.js"></script> -->
