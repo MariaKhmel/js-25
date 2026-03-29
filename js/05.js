@@ -124,3 +124,16 @@
 
 // updateCounter(10, counter.increment);
 // updateCounter(16, counter.decrement);
+
+
+const changeColor = function (color) {
+  console.log("change color ->", this);
+  this.color = color;
+}
+
+const hat = {
+  color: "black",
+}
+
+changeColor.call(hat, "blue")
+console.log(hat)
