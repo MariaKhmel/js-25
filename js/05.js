@@ -125,25 +125,25 @@ const counter = {
 // updateCounter(10, counter.increment.bind(counter));
 // updateCounter(16, counter.decrement.bind(counter));
 
-const incrementBtn = document.querySelector(".js-increment");
-const decrementBtn = document.querySelector(".js-decrement");
-const valueEl = document.querySelector(".js-value");
+// const incrementBtn = document.querySelector(".js-increment");
+// const decrementBtn = document.querySelector(".js-decrement");
+// const valueEl = document.querySelector(".js-value");
 
 
-incrementBtn.addEventListener("click", function () {
-  console.log("clicked increment");
-  counter.increment();
-  console.log(counter);
-  valueEl.textContent = counter.value;
-})
+// incrementBtn.addEventListener("click", function () {
+//   console.log("clicked increment");
+//   counter.increment();
+//   console.log(counter);
+//   valueEl.textContent = counter.value;
+// })
 
 
-decrementBtn.addEventListener("click", function () {
-  console.log("clicked decrement");
-  counter.decrement();
-  console.log(counter);
-  valueEl.textContent = counter.value;
-})
+// decrementBtn.addEventListener("click", function () {
+//   console.log("clicked decrement");
+//   counter.decrement();
+//   console.log(counter);
+//   valueEl.textContent = counter.value;
+// })
 
 
 
@@ -158,3 +158,11 @@ decrementBtn.addEventListener("click", function () {
 
 // changeColor.call(hat, "blue")
 // console.log(hat)
+
+const Car = function () {
+
+}
+
+const car1 = new Car()
+// console.log(Car.prototype === car1.__proto__)
+console.log(Car.__proto__ === Function.prototype)
