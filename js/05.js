@@ -159,10 +159,32 @@ const counter = {
 // changeColor.call(hat, "blue")
 // console.log(hat)
 
-const Car = function () {
+// const Car = function (brand) {
+//   this.brand = brand;
+// }
 
+// const car1 = new Car()
+// console.log(Car.prototype === car1.__proto__)
+// console.log(Car.prototype.__proto__ === Object.prototype)
+
+// console.log(car1)
+
+const User = function ({ name }) {
+  console.log("this in User", this)
+  this.name = name;
 }
 
-const car1 = new Car()
-// console.log(Car.prototype === car1.__proto__)
-console.log(Car.__proto__ === Function.prototype)
+User.prototype.setNewName = function (newName) {
+  console.log("this in setNewName", this)
+}
+
+const mango = new User({ name: "mango" })
+mango.setNewName("newName")
+
+console.log(User.prototype.__proto__ === Object.prototype)
+console.log(typeof Object);
+
+
+
+
+
