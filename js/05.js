@@ -169,7 +169,7 @@ const counter = {
 
 // console.log(car1)
 
-const User = function (name) {
+const User = function ({ name = "test" } = {}) {
   console.log("this in User", this)
   this.name = name;
 }
@@ -192,4 +192,4 @@ User.logMessage = function () {
 
 User.logMessage()
 
-console.log(new User({ name: "name" }))
+console.log(new User())
