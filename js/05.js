@@ -169,10 +169,10 @@ const counter = {
 
 // console.log(car1)
 
-// const User = function ({ name }) {
-//   console.log("this in User", this)
-//   this.name = name;
-// }
+const User = function (name) {
+  console.log("this in User", this)
+  this.name = name;
+}
 
 // User.prototype.setNewName = function (newName) {
 //   console.log("this in setNewName", this)
@@ -186,5 +186,10 @@ const counter = {
 
 
 
+User.logMessage = function () {
+  console.log("show message")
+}
 
+User.logMessage()
 
+console.log(new User({ name: "name" }))
