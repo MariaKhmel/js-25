@@ -169,20 +169,20 @@ const counter = {
 
 // console.log(car1)
 
-const User = function ({ name }) {
-  console.log("this in User", this)
-  this.name = name;
-}
+// const User = function ({ name }) {
+//   console.log("this in User", this)
+//   this.name = name;
+// }
 
-User.prototype.setNewName = function (newName) {
-  console.log("this in setNewName", this)
-}
+// User.prototype.setNewName = function (newName) {
+//   console.log("this in setNewName", this)
+// }
 
-const mango = new User({ name: "mango" })
-mango.setNewName("newName")
+// const mango = new User({ name: "mango" })
+// mango.setNewName("newName")
 
-console.log(User.prototype.__proto__ === Object.prototype)
-console.log(typeof Object);
+// console.log(User.prototype.__proto__ === Object.prototype)
+// console.log(typeof Object);
 
 
 
