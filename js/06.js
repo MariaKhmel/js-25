@@ -61,3 +61,50 @@
 //   new Promise(resolve => setTimeout(() => resolve("slow"), 300)),
 //   new Promise(resolve => setTimeout(() => resolve("fast"), 100))
 // ]).then(console.log)
+
+// class Dog {
+//   constructor({ name } = {}) {
+//     this.name = name;
+//   }
+//   bark() {
+//     console.log("bark");
+//   }
+// }
+
+// const dog = new Dog({ name: "dog" });
+// // console.log(dog.__proto__ === Dog.prototype);
+// console.log(Dog.__proto__ === Function.prototype);
+// console.log(Object.__proto__)
+
+// const obj = {
+//   name: 'Maria',
+//   greet: function () {
+//     setTimeout(function () {
+//       console.log(this.name)
+//     }, 1000)
+//   }
+// }
+// obj.greet()
+
+// function Person(name) {
+//   this.name = name;
+// }
+
+// Person.prototype.greet = function () {
+//   return `Hi, I'm ${this.name}`
+// }
+
+// const ted = new Person("ted")
+// console.log(ted.greet())
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  greet() {
+    return `Hi, I'm ${this.name}`
+  }
+}
+
+const ted = Person()
