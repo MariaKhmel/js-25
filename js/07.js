@@ -31,23 +31,23 @@
 // };
 
 
-const Car = function({brand, model, price}={}){
-this.brand = brand;
-this.model = model;
-this.price=price;
+// const Car = function({brand, model, price}={}){
+// this.brand = brand;
+// this.model = model;
+// this.price=price;
 
-}
+// }
 
-Car.prototype.sayHi = function(){
-    console.log("Car.prototype.sayHi -> this", this)
-    console.log("HI")
-}
+// Car.prototype.sayHi = function(){
+//     console.log("Car.prototype.sayHi -> this", this)
+//     console.log("HI")
+// }
 
-Car.prototype.changePrice = function(newPrice){
-    this.price = newPrice;
-    console.log(newPrice)
-}
-console.log(Car.prototype);
+// Car.prototype.changePrice = function(newPrice){
+//     this.price = newPrice;
+//     console.log(newPrice)
+// }
+// console.log(Car.prototype);
 
 // 1. Если функция вызывается через new, создаётся пустой объект
 // const myCar = new Car({
@@ -57,6 +57,23 @@ console.log(Car.prototype);
 // });
 // console.log(myCar);
 
+
+// const myCar = new Car({
+//     brand:"carbrand",
+//     model:"carmodel",
+//     price:300
+// })
+
+// myCar.sayHi();
+// myCar.changePrice(444);
+
+// const myCar2 = new Car({
+//     brand:"carbrand2",
+//     model:"carmodel2",
+//     price:320
+// })
+// console.log(myCar2);
+// myCar2.sayHi()
 // myCar.sayHi();
 // myCar.changePrice(10000);
 
@@ -70,21 +87,37 @@ console.log(Car.prototype);
 
 // myCar3.sayHi();
 
-const User = function ({ email, password } = {}) {
-  this.email = email;
-  this.password = password;
-};
+// const User = function ({ email, password } = {}) {
+//   this.email = email;
+//   this.password = password;
+// };
 
-console.log(User.prototype);
+// console.log(User.prototype);
 
-User.prototype.changeEmail = function (newMail) {
-  this.email = newMail;
-};
+// User.prototype.changeEmail = function (newMail) {
+//   this.email = newMail;
+// };
 
-const mango = new User({ email: 'mango@mail.com', password: 1111111 });
+// const mango = new User({ email: 'mango@mail.com', password: 1111111 });
 
-mango.changeEmail('my-new-mail@mail.com');
+// mango.changeEmail('my-new-mail@mail.com');
 // console.log(mango);
+
+const User = function({email, password }= {}){
+    this.email = email;
+    this.password = password;
+}
+
+User.prototype.changeEmail = function(newEmail){
+    this.email = newEmail;
+}
+
+const mango = new User({email:"mangoemail", password:"mangopassword"});
+console.log(mango)
+
+mango.changeEmail("newemailmango")
+
+console.log(mango)
 
 /*
  * Статические свойства и методы
@@ -92,17 +125,26 @@ mango.changeEmail('my-new-mail@mail.com');
  * - В статических методах не нужен this
  */
 
-User.message =
-  'Я статическое свойство, меня нет на экземплярах или в прототипе.';
+// User.message =
+//   'Я статическое свойство, меня нет на экземплярах или в прототипе.';
 
-User.logInfo = function (obj) {
-  console.log('User.logInfo -> obj', obj);
-  console.log('Почта: ', obj.email);
-  console.log('Пароль: ', obj.password);
-};
+// User.logInfo = function (obj) {
+//   console.log('User.logInfo -> obj', obj);
+//   console.log('Почта: ', obj.email);
+//   console.log('Пароль: ', obj.password);
+// };
 
-User.logInfo(mango);
+// User.logInfo(mango);
 
+User.message = "user message";
+
+User.logInfo = function(obj){
+    console.log(obj.email);
+    console.log(obj.password);
+    console.log("obj", obj)
+}
+
+User.logInfo(mango)
 // Object.keys()
 // Object.value()
 
