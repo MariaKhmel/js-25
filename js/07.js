@@ -103,21 +103,21 @@
 // mango.changeEmail('my-new-mail@mail.com');
 // console.log(mango);
 
-const User = function({email, password }= {}){
-    this.email = email;
-    this.password = password;
-}
+// const User = function({email, password }= {}){
+//     this.email = email;
+//     this.password = password;
+// }
 
-User.prototype.changeEmail = function(newEmail){
-    this.email = newEmail;
-}
+// User.prototype.changeEmail = function(newEmail){
+//     this.email = newEmail;
+// }
 
-const mango = new User({email:"mangoemail", password:"mangopassword"});
-console.log(mango)
+// const mango = new User({email:"mangoemail", password:"mangopassword"});
+// console.log(mango)
 
-mango.changeEmail("newemailmango")
+// mango.changeEmail("newemailmango")
 
-console.log(mango)
+// console.log(mango)
 
 /*
  * Статические свойства и методы
@@ -136,15 +136,15 @@ console.log(mango)
 
 // User.logInfo(mango);
 
-User.message = "user message";
+// User.message = "user message";
 
-User.logInfo = function(obj){
-    console.log(obj.email);
-    console.log(obj.password);
-    console.log("obj", obj)
-}
+// User.logInfo = function(obj){
+//     console.log(obj.email);
+//     console.log(obj.password);
+//     console.log("obj", obj)
+// }
 
-User.logInfo(mango)
+// User.logInfo(mango)
 // Object.keys()
 // Object.value()
 
@@ -157,3 +157,85 @@ User.logInfo(mango)
 // 7. Функция вызывается в контексте созданного объекта
 // 8. В свойство this.__proto__ записывается ссылка на обьект Функция.prototype
 // 9. Ссылка на обьект возвращается в место вызова new Фунукция()
+
+// const CounterPlugin = function ({
+//     rootSelector,
+//     initialValue = 0,
+//     step = 1,
+//     onUpdate = () => null,
+// } = {}) {
+//     this._value = initialValue;
+//     this._step = step;
+//     this._refs = this._getRefs(rootSelector);
+
+//     this.onUpdate = onUpdate;
+
+//     this._bindEvents();
+//     this.updateValueUI();
+// };
+
+
+
+const CounterPlugin = function ({
+    rootSelector,
+    initialValue = 0,
+    step = 1,
+    onUpdate = ()=>null,
+} = {}) {
+    this._value = initialValue;
+    this._step = step;
+    this._refs = this.getRefs(rootSelector);
+
+    this.onUpdate = onUpdate;
+
+    this._bindEvents();
+    this.updateValueUI();
+}
+
+
+CounterPlugin.prototype._getRefs = function (rootSelector) {
+    const refs = {};
+    refs.container = document.querySelector(rootSelector);
+    refs.incrementBtn = refs.container.querySelector('[data-increment]');
+    refs.decrementBtn = refs.container.querySelector('[data-decrement]');
+    refs.value = refs.container.querySelector('[data-value]');
+
+    return refs;
+};
+
+CounterPlugin.prototype._bindEvents = function () {
+    this._refs.incrementBtn.addEventListener('click', () => {
+        console.log('CounterPlugin.prototype._bindEvents -> this', this);
+        this.increment();
+        this.updateValueUI();
+    });
+
+    this._refs.decrementBtn.addEventListener('click', () => {
+        console.log('CounterPlugin.prototype._bindEvents -> this', this);
+        this.decrement();
+        this.updateValueUI();
+    });
+};
+
+CounterPlugin.prototype.updateValueUI = function () {
+    this._refs.value.textContent = this._value;
+
+    this.onUpdate();
+};
+
+CounterPlugin.prototype.increment = function () {
+    this._value += this._step;
+};
+
+CounterPlugin.prototype.decrement = function () {
+    this._value -= this._step;
+};
+
+new CounterPlugin({
+    rootSelector: '#counter-1',
+    step: 10,
+    initialValue: 100,
+    onUpdate: () => console.log('Это мой кастомный колбек для onUpdate'),
+});
+
+new CounterPlugin({ rootSelector: '#counter-2', step: 2 });
