@@ -135,10 +135,10 @@ const poly = new Mage({
 
 // console.log(Object.getPrototypeOf(mango) === Warrior.prototype)
 
-console.log(
-    Warrior.prototype.__proto__ === Hero.prototype
-)
+// console.log(
+//     Warrior.prototype.__proto__ === Hero.prototype
+// )
 
-console.log(Hero.prototype.__proto__ === Object.prototype)
+// console.log(Hero.prototype.__proto__ === Object.prototype)
 
-console.log(Object.prototype)
+// console.log(Object.prototype)
