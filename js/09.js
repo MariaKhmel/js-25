@@ -465,7 +465,7 @@
  *  - если compareFunction(A, B) вернёт 0, сортировка оставит A и B на неизменными по отношению друг к другу, но отсортирует их по отношению ко всем другим элементам.
  */
 
-const numbers = [2, 5, 1, 3, 4, -5, 8];
+// const numbers = [2, 5, 1, 3, 4, -5, 8];
 
 // numbers.sort((currentEl, nextEl) => {
 //     return nextEl - currentEl;
@@ -479,46 +479,313 @@ const numbers = [2, 5, 1, 3, 4, -5, 8];
  * - Операция spread
  */
 
-const copy = numbers.slice();
-console.log(copy)
 
-const descSortedNumbers = [...numbers].sort((a, b) => b - a);
-const ascSortedNumbers = [...numbers].sort((a, b) => a - b);
+
+// const descSortedNumbers = [...numbers].sort((a, b) => b - a);
+// const ascSortedNumbers = [...numbers].sort((a, b) => a - b);
+
+// const descSortedNumbers = [...numbers].sort((a, b) => b - a);
+// const ascSortedNumbers = [...numbers].sort((a, b) => a - b);
 // console.log('descSortedNumbers', descSortedNumbers);
 // console.log('ascSortedNumbers', ascSortedNumbers);
 
 /*
  * Кастомная сортировка сложных типов
  */
-const players = [
-    { id: 'player-1', name: 'Mango', timePlayed: 310, online: false },
-    { id: 'player-2', name: 'Poly', timePlayed: 470, online: true },
-    { id: 'player-3', name: 'Aiwi', timePlayed: 230, online: true },
-    { id: 'player-4', name: 'Ajax', timePlayed: 150, online: false },
-    { id: 'player-5', name: 'Chelsey', timePlayed: 80, online: true },
-];
+// const players = [
+//     { id: 'player-1', name: 'Mango', timePlayed: 310, online: false },
+//     { id: 'player-2', name: 'Poly', timePlayed: 470, online: true },
+//     { id: 'player-3', name: 'Aiwi', timePlayed: 230, online: true },
+//     { id: 'player-4', name: 'Ajax', timePlayed: 150, online: false },
+//     { id: 'player-5', name: 'Chelsey', timePlayed: 80, online: true },
+// ];
 
 // По игровому времени
-const sortedByBestPlayers = [...players].sort(
-    (prevPlayer, nextPlayer) => nextPlayer.timePlayed - prevPlayer.timePlayed,
-);
+// const sortedByBestPlayers = [...players].sort(
+//     (prevPlayer, nextPlayer) => nextPlayer.timePlayed - prevPlayer.timePlayed,
+// );
+
+// const sortedByBestPlayers = [...players].sort((prevPlayer, nextPlayer) => prevPlayer.timePlayed - nextPlayer.timePlayed);
 // console.table(sortedByBestPlayers);
 
-const sortedByWorstPlayers = [...players].sort(
-    (prevPlayer, nextPlayer) => prevPlayer.timePlayed - nextPlayer.timePlayed,
-);
+// const sortedByWorstPlayers = [...players].sort(
+//     (prevPlayer, nextPlayer) => prevPlayer.timePlayed - nextPlayer.timePlayed,
+// );
+
+// const sortedByWorstPlayers = [...players.sort(function (prevPlayer, nextPlayer) {
+//     return nextPlayer.timePlayed - prevPlayer.timePlayed;
+// })]
 // console.table(sortedByWorstPlayers);
 
-const byName = [...players].sort((a, b) => {
-    const result = a.name[0] > b.name[0];
+// const byName = [...players].sort((a, b) => {
+//     const result = a.name[0] > b.name[0];
 
-    if (result) {
-        return 1;
-    }
+//     if (result) {
+//         return 1;
+//     }
 
-    if (!result) {
-        return -1;
-    }
-});
+//     if (!result) {
+//         return -1;
+//     }
+// });
+
+
+// const byName = [...players].sort(function (prevPlayer, nextPlayer) {
+//     const result = prevPlayer.name[0] > nextPlayer.name[0];
+//     if (result) {
+//         return 1;
+//    }
+//     if (!result) {
+//         return -1;
+// }
+// })
 
 // console.table(byName);
+
+/*
+ * Array.prototype.flat(depth)
+ * - Разглаживает массив до указанной глубины
+ * - По умолчанию глубина 1
+ */
+
+// const array = [1, 2, [4, [5]], [6, [7, 8, [9]]]];
+// console.log(array.flat(3));
+
+// console.log(array.flat(2))
+
+/*
+ * Array.prototype.flatMap(callback)
+ * - Комбинация map + flat
+ */
+
+// const tweets = [
+//     { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+//     { id: '001', likes: 2, tags: ['html', 'css'] },
+//     { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+//     { id: '003', likes: 8, tags: ['css', 'react'] },
+//     { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+// ];
+// const tags = tweets.flatMap(el => el.tags);
+
+// console.log(tags)
+
+// const tags = tweets.flatMap(t => t.tags);
+// console.log(tags);
+
+
+// const stats = tags.reduce((acc, tag) => {
+//     return {
+//         ...acc,
+//         [tag]: acc[tag] ? acc[tag] + 1 : 1
+//     }
+// }, {});
+
+
+
+
+
+
+// const stats = tags.reduce((acc, tag) => {
+//     return {
+//         ...acc,
+//         [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//     };
+// }, {});
+
+// const stats = tweets
+//     .flatMap(tweet => tweet.tags)
+//     .reduce(
+//         (acc, tag) => ({
+//             ...acc,
+//             [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//         }),
+//         {},
+//     );
+
+// console.log(stats);
+
+/*
+ * Цепочки вызовов - chaining
+ */
+const numbers = [1, 5, 2, 4, 3];
+
+const greaterThanTwo = numbers.filter(el => el > 2);
+// console.log(greaterThanTwo);
+
+const multiplyByThree = greaterThanTwo.map(el => el * 3);
+// console.log(multiplyByThree);
+
+// const sorted = multiplyByThree.sort((a, b) => a - b);
+// console.log(sorted);
+// const sorted = numbers.filter(el => el > 2).map(el => el * 3).sort((a, b) => a - b);
+
+// console.log(sorted)
+// const greaterThenTwo = numbers.filter(num => num > 2);
+// console.log(greaterThenTwo);
+
+// const multByThree = greaterThenTwo.map(num => num * 3);
+// console.log(multByThree);
+
+// const sorted = multByThree.sort((a, b) => a - b);
+// console.log(sorted);
+
+// Цепочка предыдущих трёх
+// const sorted = numbers
+//     .filter(num => num > 2)
+//     .map(num => num * 3)
+//     .sort((a, b) => a - b);
+
+// console.log(sorted);
+
+/*
+ * Сортируем тех кто онлайн по рангу
+ * - сначала фильтруем
+ * - потом сортируем
+ */
+// const players = [
+//     { id: 'id-1', tag: 'Mango', isOnline: true, rank: 800 },
+//     { id: 'id-2', tag: 'Poly', isOnline: false, rank: 600 },
+//     { id: 'id-3', tag: 'Ajax', isOnline: true, rank: 100 },
+//     { id: 'id-4', tag: 'Kiwi', isOnline: true, rank: 400 },
+//     { id: 'id-5', tag: 'Chelsy', isOnline: false, rank: 200 },
+// ];
+
+
+
+
+// const onlineAndSorted = players.filter(el => el.isOnline)
+//     .sort((a, b) => {
+//         if (a.tag > b.tag) {return 1};
+//         if (a.tag < b.tag) { return -1 };
+    
+//         return 0;
+//     });
+
+// const onlineAndSorted = players.filter(el => el.isOnline)
+//     .sort((a, b) => a.rank - b.rank);
+
+// console.log(onlineAndSorted)
+
+// const onlineAndSorted = players
+//     .filter(player => player.isOnline)
+//     .sort((playerA, playerB) => playerA.rank - playerB.rank);
+
+// console.table(onlineAndSorted);
+
+/*
+ * Chaining в методах объекта как jquery
+ */
+
+// const element = {
+//     class: '',
+//     hovered: false,
+//     changeClass(cls) {
+//         this.class = cls;
+
+//         return this;
+//     },
+//     toggleHovered() {
+//         this.hovered = !this.hovered;
+
+//         return this;
+//     },
+// };
+
+// element.toggleHovered().changeClass('open').toggleHovered();
+// console.log(element);
+
+// const element = {
+//     class: "",
+//     hovered: false,
+//     changeClass(cls) {
+//         this.class = cls;
+//         console.log(this);
+//         return this;
+//     },
+//     toggleHovered() {
+//         this.hovered = !this.hovered;
+//         return this;
+//     },
+// }
+// element.toggleHovered().changeClass("open").toggleHovered();
+// console.log(element)
+
+
+/*
+ * get()
+ *
+ * - user && user.location && obj.location.city
+ * - user?.location?.city
+ */
+
+// const user = {
+//     name: 'mango',
+//     location: {
+//         city: "lviv"
+//     },
+// };
+// console.log(user && user.test && user.test.test)
+
+// const result = Object.values(user).filter(el=>typeof(el)==="string").map(el => el[0].toUpperCase()+el.slice(1));
+// console.log(result)
+
+// const capitalize = function (str) {
+//     return str[0].toUpperCase() + str.slice(1);
+// }
+
+
+
+// for (const key in user) {
+//     const value = user[key];
+    
+//     if (typeof value === "object") {
+//         for (const innerkey in value) {
+//            value[innerkey] = capitalize(value[innerkey]);
+//         }
+//     } else {
+//       value = capitalize(value);
+//     }
+// }
+// console.log(user)
+
+// const user = {
+//     name: 'mango',
+//     location: {
+//         city: { test: "lviv" }
+//     },
+// };
+
+// const capitalize = str => str[0].toUpperCase() + str.slice(1);
+// const result = [];
+
+// function collectValues(obj) {
+//     for (const key in obj) {
+//         const val = obj[key];
+
+//         if (typeof val === "object") {
+//             collectValues(val); // 🔄 calls itself if nested
+//         } else {
+//             result.push(capitalize(val));
+//         }
+//     }
+// }
+
+// function collectValues(obj) {
+//     for (const key in obj) {
+//         if (!obj.hasOwnProperty(key)) {
+//             continue;
+//          }
+//             const value = obj[key];
+//             if (typeof value === "object") {
+//                 collectValues(value);
+//             } else {
+//                 result.push(capitalize(value))
+//             }
+        
+// }
+// }
+
+// collectValues(user);
+// console.log(result); // ["Mango", "Lviv"]
+
+console.log(Math.random())
