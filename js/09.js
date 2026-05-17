@@ -788,4 +788,4 @@ const multiplyByThree = greaterThanTwo.map(el => el * 3);
 // collectValues(user);
 // console.log(result); // ["Mango", "Lviv"]
 
-console.log(Math.random())
+// console.log(Math.random())
