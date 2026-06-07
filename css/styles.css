@@ -37,3 +37,13 @@ text-decoration: underline;
 .site-nav__link--current{
     color: tomato;
 }
+
+.color-picker__option{
+display: inline-block;
+width: 64px;
+height: 64px;
+margin: 4px;
+border: none;
+outline: none;
+cursor: pointer;
+}
