@@ -94,4 +94,12 @@ body.show-modal .modal{
 
     transform: scale(1.1);
     transition:  transform 200ms ease-in-out;
+.color-picker__option{
+display: inline-block;
+width: 64px;
+height: 64px;
+margin: 4px;
+border: none;
+outline: none;
+cursor: pointer;
 }
