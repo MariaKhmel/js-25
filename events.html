@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>events</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 300px;
+            height: 300px;
+
+            background-color: #3f51b5;
+            transition: background-color 200ms ease-in;
+        }
+
+        .box--active{
+            background-color: #009688;
+        }
+
+        .inner-box{
+            width: 100px;
+            height: 100px;
+            background-color: #ffc107;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- <button type="button" class="js-target-btn">Target button</button>
+    <button type="button" class="js-add-listener">Add listener</button>
+    <button type="button" class="js-remove-listener">Remove listener</button> -->
+
+    <p>
+      <a href="/"> to the main page</a>
+    </p>
+    <p>
+      <a href="modal.html">Go to modal html</a>
+    </p>
+
+    <!-- <form class="js-register-form" autocomplete="off">
+      <div role="group">
+        <label>
+          Email
+          <input type="text" name="email" />
+        </label>
+
+        <label>
+          Password
+          <input type="text" name="password" />
+        </label>
+      </div>
+
+    <div role="group"> 
+        <b>subscription type</b>
+      <label>
+        <input type="radio" name="subsription" value="free">
+        Free
+    </label>
+      <label>
+        <input type="radio" name="subsription" value="basic">
+        Basic
+    </label>
+      <label>
+        <input type="radio" name="subsription" value="pro">
+        Pro
+    </label>
+    </div>
+    <br>
+    <button type="submit">Register</button>
+
+    </form> -->
+
+    <!-- <label >
+        name
+        <input type="text" class="js-input">
+    </label>
+    <p>
+        <label >
+            <input type="checkbox" class="js-license">
+            accept
+        </label>
+    </p>
+
+    <button type="submit" disabled class="js-button">
+        regiser as <span>anonymous user</span>
+    </button> -->
+
+    <!-- <button class="js-clear">erase</button>
+    <p class="output js-output"></p>
+
+    <script type="module" src="./js/events.js"></script>
+ 
+
+ <div class="box js-box">
+    <div class="inner-box"></div>
+  </div>  -->
+
+ <button class="button" data-action="open-modal">Open modal</button>
+
+ <div class="backdrop js-backdrop">
+    <div class="modal">
+        <h2>Modal window</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, incidunt assumenda? Aperiam nobis aliquid totam quas quae provident nostrum sapiente accusamus quisquam, fugit maiores sit itaque ab incidunt. Tempore, aliquid!</p>
+        <button type="button" class="button" data-action="close-modal">
+            Close
+        </button>
+    </div>
+ </div>
+
+
+
+  <script type="module" src="./js/events.js"></script>
+   </body>
+</html>
